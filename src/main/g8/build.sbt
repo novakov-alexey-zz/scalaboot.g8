@@ -5,6 +5,8 @@ ThisBuild / organization := "com.example"
 ThisBuild / scalaVersion := "$scalaVersion$"
 ThisBuild / description  := "$desc$"
 
+Global / onChangedBuildSource := ReloadOnSourceChanges
+
 lazy val root = (project in file(".")).
   settings(
     name := "$name;format="lower,hyphen"$",
@@ -24,7 +26,7 @@ releaseProcess := Seq[ReleaseStep](
     inquireVersions,
     runTest,
     setReleaseVersion,
-    publishArtifacts,
+    // publishArtifacts,
     commitReleaseVersion,
     tagRelease, 
     inquireVersions, 
