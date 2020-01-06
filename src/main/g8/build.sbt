@@ -1,4 +1,5 @@
 import Dependencies._
+import sbtrelease.ReleaseStateTransformations._
 
 ThisBuild / organization := "com.example"
 ThisBuild / scalaVersion := "$scalaVersion$"
@@ -21,7 +22,7 @@ lazy val root = (project in file(".")).
 releaseProcess := Seq[ReleaseStep](
     checkSnapshotDependencies,
     inquireVersions,
-    runTests,
+    runTest,
     setReleaseVersion,
     publishArtifacts,
     commitReleaseVersion,
