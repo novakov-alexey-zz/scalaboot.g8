@@ -17,3 +17,17 @@ lazy val root = (project in file(".")).
       scalaTest % Test
     )
   )
+
+releaseProcess := Seq[ReleaseStep](
+    checkSnapshotDependencies,
+    inquireVersions,
+    runTests,
+    setReleaseVersion,
+    publishArtifacts,
+    commitReleaseVersion,
+    tagRelease, 
+    inquireVersions, 
+    setNextVersion, 
+    commitNextVersion, 
+    pushChanges  
+  )
