@@ -1,12 +1,12 @@
 import Dependencies._
 
 ThisBuild / organization := "com.example"
-ThisBuild / version      := "0.1.0-SNAPSHOT"
-ThisBuild / scalaVersion := "2.13.1"
+ThisBuild / scalaVersion := "$scalaVersion$"
+ThisBuild / description  := "$description$"
 
 lazy val root = (project in file(".")).
   settings(
-    name := "scalaboot",
+    name := "$name;format="lower,hyphen"$",
     libraryDependencies ++= Seq(
       akkaHttp,
       akkaStreams,
